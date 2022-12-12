@@ -8,39 +8,20 @@ import pdb
 
 def gen_initial_query(num_dims: int, num_options: int) -> List[np.ndarray]:
     """Generate a query for the first iteration."""
-    return [[1,	0, -0.006, 4, 0.006, 2, -0.01, -0.1], [1, 0.9, -0.006,	4, 0.006, 2, -0.01, -0.1], [1, 0.998999, -0.006, 4, 0.006, 2, -0.01, -0.1]]          # For triplet comparioson, each one has 8 parameters. These values are taken from .csv file.
+    # For triplet comparioson, each one has 8 parameters. These values are taken from .csv file.
+    return [[1,	0, -0.006, 4, 0.006, 2, -0.01, -0.1], [1, 0.9, -0.006,	4, 0.006, 2, -0.01, -0.1], [1, 0.998999, -0.006, 4, 0.006, 2, -0.01, -0.1]]         
 
 
-#we don't need these methods as we already know the index of the row that the users prefer.
+#we don't need these methods as we already know the index of the row that the users prefer. i.e., we already know the user preferred index from user survey.
 '''
 def calc_simulated_objective_func(x: np.ndarray) -> float:
-    """Calculate a synthetic objective function value."""
-    # reading the CSV file
-    csvFile = pandas.read_csv('Hallway_Scenario.csv')
- 
-    # displaying the contents of the CSV file
-    #print(csvFile['Cheby_1_Or_Euclidean_2'][14])
-
-    return float(-np.linalg.norm(x - 0.2))
+    ......
+    ......
 
 def ask_human_for_feedback(options: List[np.ndarray]) -> int:
     """Simulate human response to a pairwise comparison query."""
-    assert len(options) == 2
-
-    i_max = -1
-    f_max = -sys.float_info.max
-
-    for i in range(len(options)):
-        x = options[i]
-        f = calc_simulated_objective_func(x)
-        print("f: ", f)
-
-        if f_max < f:
-            i_max = i
-            f_max = f
-        #print("i_max: ", i_max)
-
-    return i_max
+    ....
+    ....
 '''
 
 
